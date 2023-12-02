@@ -27,15 +27,18 @@ public class MenuManager {
 		for(int j = 0; j<i; ++j) {
 			if(FoodItem.equals(menuFull[j].returnName())){
 				menuFull[j] = null;
-				for(int x = j; x<menuFull.length; ++x) {
+				for(int x = j; x<i; ++x) {
 					menuFull[x] = menuFull[x+1]; 
 				}
 			}
 		}
+		this.i--;
 	}
 	public void displayMenu() {
-		for(int x=0;x<menuFull.length;++x) {
+		for(int x=0;x<i;++x) {
 			System.out.println(menuFull[x].returnName() + " - " + menuFull[x].returnDescription() + " - " + menuFull[x].returnPrice());
+			
+			
 		}
 	}
 	
